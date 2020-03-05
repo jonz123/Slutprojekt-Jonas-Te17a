@@ -7,7 +7,7 @@ class Mirainoko : Persona
     // Start is called before the first frame update
     void Start()
     {
-        name = "Mirainoko";
+        personaName = "Mirainoko";
         arcana = arcanaList[0];
         level = 25;
         experience = 0;
@@ -19,6 +19,13 @@ class Mirainoko : Persona
 
         weakness[7] = 1;
         resists[6] = 1;
+
+        Skill FatalEnd = new FatalEnd();
+        Skill Paradox = new Paradox();
+
+        skillList.Add(FatalEnd);
+        skillList.Add(Paradox);
+
     }
 
     // Update is called once per frame
