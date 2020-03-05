@@ -1,0 +1,19 @@
+Slutprojekt:
+Persona Mechanics Replica
+
+Content:
+- Main Menu (options below)
+- Battle (+ailments, weakness, crits)
+- Fusion (recipes, results, social links)
+
+Battle:
+- Persona 4 style
+- 4 characters (individual str + wkn)
+- ? enemies (individual str + wkn)
+- skills
+- crits (knocked down)
+
+Fusion:
+- Persona arcanas
+- Recipes + results
+- social link addition XP
