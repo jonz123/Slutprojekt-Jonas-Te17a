@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,45 +288,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 389433793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec99afe51dce2c4f922ec3475d6fa53, type: 3}
+  m_Script: {fileID: 11500000, guid: 288c6772a2d748f47a89978ba6b5c66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personaName: 
-  arcana: 
+  persona: {fileID: 0}
+  name: 
   level: 0
-  experience: 0
-  str: 0
-  mag: 0
-  end: 0
-  agi: 0
-  luk: 0
-  weakness: 0000000000000000000000000000000000000000000000000000000000000000
-  resists: 0000000000000000000000000000000000000000000000000000000000000000
-  nulls: 00000000000000000000000000000000000000000000000000000000
-  skillList: []
-  arcanaList:
-  - Fool
-  - Magician
-  - Priestess
-  - Empress
-  - Emperor
-  - Hierophant
-  - Lovers
-  - Chariot
-  - Justice
-  - Hermit
-  - Fortune
-  - Strength
-  - Hanged Man
-  - Death
-  - Temperance
-  - Devil
-  - Tower
-  - Star
-  - Moon
-  - Sun
-  - Judgement
-  - World
+  hp: 0
+  sp: 0
+  InitialPersona: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &934121108
 PrefabInstance:
@@ -450,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8670a98b0d878ad4bbc47245c0d51ff1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8670a98b0d878ad4bbc47245c0d51ff1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
