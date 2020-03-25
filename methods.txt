@@ -1,0 +1,18 @@
+Metoder:
+
+FriendlyTurn()
+- byt activeCamera till karaktär (cameraID)
+- OpenHUD()
+- if activeCharacter = 1 { PersonaButton.enable } else PersonaButton.disable
+
+Attack()
+
+Skills()
+- hämta Persona.skillList
+
+Personas()
+- hämta Ownership.ownedPersonas
+
+Guard()
+- activeCharacter.Guard()
+

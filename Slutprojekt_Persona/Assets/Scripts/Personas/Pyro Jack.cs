@@ -17,6 +17,8 @@ public class PyroJack : Persona
         agi = 8;
         luk = 11;
 
+        nextXP = level * 200;
+
         weakness[3] = 1;
         nulls[2] = 1;
     }
