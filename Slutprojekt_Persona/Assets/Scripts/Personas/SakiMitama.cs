@@ -17,8 +17,8 @@ public class SakiMitama : Persona
         agi = 8;
         luk = 10;
 
-        weakness[5] = 1;
-        resists[3] = 1;
+        weakness[5] = true;
+        resists[3] = true;
     }
 
     // Update is called once per frame

@@ -17,9 +17,9 @@ class Enkidu : Persona
         agi = 19;
         luk = 20;
 
-        weakness[7] = 1;
-        weakness[5] = 1;
-        resists[2] = 1;
+        weakness[7] = true;
+        weakness[5] = true;
+        resists[2] = true;
 
         Skill zionga = new Zionga();
         Skill mazionga = new Mazionga();

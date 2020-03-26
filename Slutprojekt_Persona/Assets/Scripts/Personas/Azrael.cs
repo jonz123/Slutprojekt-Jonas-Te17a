@@ -17,9 +17,9 @@ class Azrael : Persona
         agi = 19;
         luk = 12;
 
-        weakness[6] = 1;
-        resists[1] = 1;
-        nulls[6] = 1;
+        weakness[6] = true;
+        resists[1] = true;
+        nulls[6] = true;
 
         Skill mudoon = new Mudoon();
         Skill rainydeath = new RainyDeath();

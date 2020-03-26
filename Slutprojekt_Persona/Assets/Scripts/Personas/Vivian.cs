@@ -17,9 +17,9 @@ class Vivian : Persona
         agi = 19;
         luk = 13;
 
-        weakness[7] = 1;
-        resists[3] = 1;
-        nulls[6] = 1;
+        weakness[7] = true;
+        resists[3] = true;
+        nulls[6] = true;
 
         Skill diarama = new Diarama();
         Skill media = new Media();

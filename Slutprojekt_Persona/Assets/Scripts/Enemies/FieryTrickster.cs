@@ -21,8 +21,8 @@ public class FieryTrickster : Enemy
         agi = 8;
         luk = 11;
 
-        weakness[3] = 1;
-        nulls[2] = 1;
+        weakness[3] = true;
+        nulls[2] = true;
 
     }
 

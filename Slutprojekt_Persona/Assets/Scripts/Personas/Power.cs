@@ -17,9 +17,9 @@ public class Power : Persona
         agi = 16;
         luk = 12;
 
-        weakness[7] = 1;
-        resists[5] = 1;
-        nulls[6] = 1;
+        weakness[7] = true;
+        resists[5] = true;
+        nulls[6] = true;
     }
 
     // Update is called once per frame

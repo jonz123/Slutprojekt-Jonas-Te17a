@@ -16,9 +16,9 @@ public class Persona : MonoBehaviour
 
         protected int nextXP; //används i LevelUp(), det gick inte att definera dess värde här eftersom att level är obestämd
 
-        public int[] weakness = new int[8];
-        public int[] resists = new int[8];
-        public int[] nulls = new int[8];
+        public bool[] weakness = new bool[8];
+        public bool[] resists = new bool[8];
+        public bool[] nulls = new bool[8];
 
         public List<Skill> skillList = new List<Skill>();
 

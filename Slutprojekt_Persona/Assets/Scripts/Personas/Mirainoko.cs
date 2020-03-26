@@ -17,8 +17,8 @@ class Mirainoko : Persona
         agi = 16;
         luk = 12;
 
-        weakness[7] = 1;
-        resists[6] = 1;
+        weakness[7] = true;
+        resists[6] = true;
 
         Skill FatalEnd = new FatalEnd();
         Skill Paradox = new Paradox();

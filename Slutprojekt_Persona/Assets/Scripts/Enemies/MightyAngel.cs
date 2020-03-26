@@ -22,8 +22,8 @@ public class MightyAngel : Enemy
         agi = 16;
         luk = 12;
 
-        weakness[3] = 1;
-        nulls[2] = 1;
+        weakness[3] = true;
+        nulls[2] = true;
 
     }
 
