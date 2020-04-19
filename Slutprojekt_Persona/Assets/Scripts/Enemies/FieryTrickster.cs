@@ -9,7 +9,7 @@ public class FieryTrickster : Enemy
     {
 
         personaName = "Fiery Trickster";
-        arcana = arcanaList[8];
+        arcana = arcanaList[1];
         level = 25;
 
         hp = 85;

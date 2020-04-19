@@ -83,5 +83,34 @@ public class Persona : MonoBehaviour
                 luk = luk + random;
             }
         }
-        
+
+        int DealDamage(int eDef, int Hits) //eDef hämtar fiendens defense som är baserad på dess Endurance. Hits hämtar antalet hits som en attack utgör.
+        {
+            float strDamage = Mathf.Sqrt(str / eDef) * 5;
+            strDamage = strDamage * Random.Range(0.95f, 1.05f);
+            int totalDamage = Mathf.RoundToInt(strDamage);
+            
+            return totalDamage * Hits;
+        }
 }
+
+/*
+
+Damage formula from Persona 5:
+
+DMG = 5 x sqrt(ST/EN x ATK) x MOD x HITS X RND
+
+DMG = Damage
+ST = Character's Strength stat
+EN = Enemy's Endurance stat
+ATK = Atk value of equipped weapon OR Pwr value of used skill
+MOD = Modifier based on the difference between character level and enemy level
+HITS= Number of hits (for physical skills)
+RND = Randomness factor (according to DragoonKain33, may be roughly between 0.95 and 1.05)
+
+I will be simplyfying it by using the following:
+DMG = 5 x sqrt(ST/EN) x HITS x RND
+
+Simplification is needed due to the game lacking weapons, and the modifier value is unclear as to what it means.
+
+*/

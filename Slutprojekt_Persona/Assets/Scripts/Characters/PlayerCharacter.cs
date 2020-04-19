@@ -10,7 +10,7 @@ public class PlayerCharacter : Character
 
     void Start()
     {
-        name = "Player";
+        charName = "Player";
         loadPersona = InitialPersona.GetComponent<Mirainoko>();
         level = loadPersona.level;
         hp = 220;
