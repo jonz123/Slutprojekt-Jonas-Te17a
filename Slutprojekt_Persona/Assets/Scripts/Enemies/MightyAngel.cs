@@ -13,8 +13,8 @@ public class MightyAngel : Enemy
         arcana = arcanaList[8];
         level = 25;
 
-        hp = 260;
-        sp = 60;
+        hp = 560;
+        sp = 130;
 
         str = 20;
         mag = 19;

@@ -6,25 +6,34 @@ public class Character : MonoBehaviour
 {
     [SerializeField]
     public GameObject persona;
-    protected Persona loadPersona; //osynlig för att den enbart används för att hämta stats, onödig att ha den i Unitys interface
+    public Persona loadPersona; //vill att den ska vara osynlig för att den enbart används för att hämta stats, onödig att ha den i Unitys interface
 
     public string charName; //jag vet inte vad den här gör
     public int level; //ska baseras utifrån karaktärens personas level
     public int hp; //health points
     public int sp; //spirit points
 
+    public int weaponDamage;
+
     bool isGuarding;
 
-    int takeDamage(int damageTaken)
+    void Start()
+    {
+        loadPersona = persona.GetComponent<Persona>();
+        level = loadPersona.level;
+        weaponDamage = 80;
+    }
+
+    void takeDamage(int damageTaken)
     {
         if (isGuarding == true)
         {
             isGuarding = false;
-            return hp = hp - damageTaken / 2;
+            hp = hp - damageTaken / 2;
         }
         else
         {
-            return hp = hp - damageTaken;
+            hp = hp - damageTaken;
         }
         
     }

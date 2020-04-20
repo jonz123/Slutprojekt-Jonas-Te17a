@@ -1,0 +1,12 @@
+Todo:
+- Fiendens runda
+- Negotiation
+- Skills
+- Personas
+- Critical hit
+- All-Out Attack?
+
+Priolista:
+1. Fiendes Runda
+2. Skills
+3. Personas 

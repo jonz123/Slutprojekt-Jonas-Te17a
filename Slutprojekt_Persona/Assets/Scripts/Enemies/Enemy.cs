@@ -8,14 +8,8 @@ public class Enemy : Persona
     public int hp;
     public int sp;
 
-    void TakeDamage(int damageTaken)
+    public void TakeDamage(int damageTaken)
     {
-        
+        hp = hp - damageTaken;
     }
-
-    int DealDamage()
-    {
-        return 0;
-    }
-
 }
