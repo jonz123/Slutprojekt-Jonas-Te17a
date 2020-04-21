@@ -21,8 +21,8 @@ class Vivian : Persona
         resists[3] = true;
         nulls[6] = true;
 
-        Skill diarama = new Diarama();
-        Skill media = new Media();
+        Skill diarama = gameObject.AddComponent<Diarama>();
+        Skill media = gameObject.AddComponent<Media>();
 
         skillList.Add(diarama);
         skillList.Add(media);

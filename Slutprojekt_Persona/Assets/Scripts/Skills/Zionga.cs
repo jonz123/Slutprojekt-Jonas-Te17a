@@ -9,7 +9,7 @@ public class Zionga : Skill
     {
         skillName = "Zionga";
         description = "Deals medium Electric damage to 1 foe.";
-        element[4] = 1;
+        element[4] = true;
         power = 200;
         target = 1;
         spCost = 8;

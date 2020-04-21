@@ -9,7 +9,7 @@ public class Diarama : Skill
     {
         skillName = "Diarama";
         description = "Moderately restores 1 ally's HP.";
-        element[0] = 1;
+        element[0] = true;
         power = 6; //user's MAG * power = HP restored (MAG 22 * 6 = 132HP)
         target = 1;
         spCost = 6;

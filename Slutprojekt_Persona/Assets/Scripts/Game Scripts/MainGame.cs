@@ -13,15 +13,13 @@ public class MainGame : MonoBehaviour
     public List<Enemy> EnemyList = new List<Enemy> { };
     public List<GameObject> PositionList = new List<GameObject> { };
 
-    public Button attackButton;
-    public Button skillButton;
-    public Button personaButton;
-    public Button guardButton;
+    public Button attackButton, skillButton, personaButton, guardButton;
 
-    public Text turnText;
-    public Text hpText;
-    public Text spText;
-    public Text enemyHPText;
+    public GameObject skillButtons;
+    public Button skill1, skill2, skill3, cancel;
+    public Text s1Text, s2Text, s3Text, skillDesc;
+
+    public Text turnText, hpText, spText, enemyHPText;
 
     public int ActionTurn = 0;
     protected int safetyValue = 0;
@@ -58,6 +56,8 @@ public class MainGame : MonoBehaviour
         skillButton.onClick.AddListener(Skills);
         personaButton.onClick.AddListener(Personas);
         guardButton.onClick.AddListener(Guard);
+
+        cancel.onClick.AddListener(Cancel);
 
         dataHandler = dataHandlerOBJ.GetComponent<Ownership>();
 
@@ -123,7 +123,7 @@ public class MainGame : MonoBehaviour
         }
         enemyHPText.text = string.Format("ENEMY HP: " + EnemyList[0].hp);
 
-        if (EnemyList[0].hp < 1)
+        if (EnemyList[0].hp < 1) //När fienden dör så avslutas spelet (för tillfället)
         {
             print("you are winner");
             Application.Quit();
@@ -140,11 +140,10 @@ public class MainGame : MonoBehaviour
 
     public void Attack()
     {
-        //attackButton.interactable = false;
         quickEnable(2);
         if (EnemyList[0].Miss(EnemyList[0].agi) == false)
         {
-            int dealtDamage = CharacterList[ActionTurn].loadPersona.DealDamage(EnemyList[0].end, 1, CharacterList[ActionTurn].weaponDamage);
+            int dealtDamage = CharacterList[ActionTurn].loadPersona.DealDamage(EnemyList[0].end, 1, CharacterList[ActionTurn].weaponDamage, 1);
             EnemyList[0].TakeDamage(dealtDamage); //EnemyList[0] kan ersättas med EnemyList[vald fiende] om spelaren får välja vilken fiende den vill slå
             turnText.text = string.Format(">" + CharacterList[ActionTurn].charName + " attacks!\n>Dealt " + dealtDamage + " damage!");
         }
@@ -156,8 +155,58 @@ public class MainGame : MonoBehaviour
         StartCoroutine(waitTwo());
     }
 
-    public void Skills()
+    public void Skills() //När knappen Skills trycks så öppnas en meny där skills kan väljas
     {
+        quickEnable(2);
+        skillButtons.gameObject.SetActive(true);
+
+        print(CharacterList[ActionTurn].loadPersona.skillList[0].costString(CharacterList[ActionTurn].hp));
+
+        //Dessa defineras för att göra koden ett snäpp mindre krånglig, som om den inte var krånglig nog
+        string s1 = CharacterList[ActionTurn].loadPersona.skillList[0].skillName; 
+        string s2 = CharacterList[ActionTurn].loadPersona.skillList[1].skillName;
+
+        string s1d = CharacterList[ActionTurn].loadPersona.skillList[0].description;
+        string s2d = CharacterList[ActionTurn].loadPersona.skillList[1].description;
+
+        string s1c = CharacterList[ActionTurn].loadPersona.skillList[0].costString(CharacterList[ActionTurn].hp);
+        string s2c = CharacterList[ActionTurn].loadPersona.skillList[1].costString(CharacterList[ActionTurn].hp);
+
+        s1Text.text = s1;
+        s2Text.text = s2;
+
+        if (CharacterList[ActionTurn].loadPersona.skillList.Count == 3)
+        {
+            skill3.gameObject.SetActive(true);
+            string s3 = CharacterList[ActionTurn].loadPersona.skillList[2].skillName;
+            string s3d = CharacterList[ActionTurn].loadPersona.skillList[2].description;
+            string s3c = CharacterList[ActionTurn].loadPersona.skillList[2].costString(CharacterList[ActionTurn].hp);
+            s3Text.text = s3;
+            skillDesc.text = string.Format(s1 + s1c + "\n" + s1d + "\n\n" + s2 + s2c + "\n" + s2d + "\n\n" + s3 + s3c + "\n" + s3d);
+        }
+        else
+        {
+            skillDesc.text = string.Format(s1 + s1c + "\n" + s1d + "\n\n" + s2 + s2c + "\n" + s2d);
+            skill3.gameObject.SetActive(false);
+        }
+
+        //Min kunskap om Text är inte jätteavancerad, men det är inte riktigt likt console.writeline så console.write fungerar inte riktigt. Hade isåfall kunnat lägga till en linje per antal skills
+        //Det ultimata skulle såklart vara att ändra description baserat på vilken skill som musen hänger över
+
+        //Nedan råder samma skript som Attack, men med inflytande av skills. Jag hade kunnat använda Attacks kod, men det gick inte att kalla fram variabler när man trycker på knappen Attack.
+        quickEnable(2);
+        if (EnemyList[0].Miss(EnemyList[0].agi) == false)
+        {
+            int dealtDamage = CharacterList[ActionTurn].loadPersona.DealDamage(EnemyList[0].end, 1, CharacterList[ActionTurn].weaponDamage, 1);
+            EnemyList[0].TakeDamage(dealtDamage); //EnemyList[0] kan ersättas med EnemyList[vald fiende] om spelaren får välja vilken fiende den vill slå
+            turnText.text = string.Format(">" + CharacterList[ActionTurn].charName + " attacks!\n>Dealt " + dealtDamage + " damage!");
+        }
+        else
+        {
+            turnText.text = string.Format(">" + CharacterList[ActionTurn].charName + " attacks!\n>Attack missed!");
+        }
+        //Koden över kallar metoden som skadar fienden med hjälp av DealDamage-valuen som finns i karaktärerna.
+        StartCoroutine(waitTwo());
 
     }
 
@@ -169,6 +218,12 @@ public class MainGame : MonoBehaviour
     public void Guard()
     {
         CharacterList[ActionTurn].Guard();
+    }
+
+    public void Cancel()
+    {
+        quickEnable(1);
+        skillButtons.gameObject.SetActive(false);
     }
 
     IEnumerator waitTwo()
@@ -193,6 +248,10 @@ public class MainGame : MonoBehaviour
             attackButton.gameObject.SetActive(true);
             skillButton.gameObject.SetActive(true);
             guardButton.gameObject.SetActive(true);
+            if (ActionTurn == 0)
+            {
+                personaButton.gameObject.SetActive(true);
+            }
             print("enabled");
         }
         if (i == 2) //Attack eller fiendes runda

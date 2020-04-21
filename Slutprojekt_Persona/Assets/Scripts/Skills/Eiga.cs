@@ -9,7 +9,7 @@ public class Eiga : Skill
     {
         skillName = "Eiga";
         description = "Deals medium Dark damage to 1 foe.";
-        element[7] = 1;
+        element[7] = true; //dark
         power = 200;
         target = 1;
         spCost = 8;

@@ -9,7 +9,7 @@ public class FatalEnd : Skill
     {
         skillName = "Fatal End";
         description = "Deals medium Physical damage to 1 foe.";
-        element[1] = 1;
+        element[1] = true;
         power = 250;
         target = 1;
         spCost = 0;

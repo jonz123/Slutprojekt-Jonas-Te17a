@@ -21,9 +21,9 @@ class Enkidu : Persona
         weakness[5] = true;
         resists[2] = true;
 
-        Skill zionga = new Zionga();
-        Skill mazionga = new Mazionga();
-        Skill killrush = new KillRush();
+        Skill zionga = gameObject.AddComponent<Zionga>();
+        Skill mazionga = gameObject.AddComponent<Mazionga>();
+        Skill killrush = gameObject.AddComponent<KillRush>();
 
         skillList.Add(zionga);
         skillList.Add(mazionga);

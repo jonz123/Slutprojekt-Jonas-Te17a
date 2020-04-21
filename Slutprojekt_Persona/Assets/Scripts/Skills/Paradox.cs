@@ -9,7 +9,7 @@ public class Paradox : Skill
     {
         skillName = "Paradox";
         description = "Deals medium Almighty damage to 1 foe.";
-        element[0] = 1; //almighty
+        element[0] = true; //almighty
         power = 240;
         target = 1;
         spCost = 10;

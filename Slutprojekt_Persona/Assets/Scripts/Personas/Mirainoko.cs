@@ -20,8 +20,8 @@ class Mirainoko : Persona
         weakness[7] = true;
         resists[6] = true;
 
-        Skill FatalEnd = new FatalEnd();
-        Skill Paradox = new Paradox();
+        Skill FatalEnd = gameObject.AddComponent<FatalEnd>();
+        Skill Paradox = gameObject.AddComponent<Paradox>();
 
         skillList.Add(FatalEnd);
         skillList.Add(Paradox);

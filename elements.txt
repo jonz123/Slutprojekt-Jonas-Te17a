@@ -1,0 +1,10 @@
+ElementList
+
+Element[0] = Almighty/Status/Non-elemental
+Element[1] = Physical
+Element[2] = Fire
+Element[3] = Ice
+Element[4] = Electricity
+Element[5] = Wind
+Element[6] = Light
+Element[7] = Dark

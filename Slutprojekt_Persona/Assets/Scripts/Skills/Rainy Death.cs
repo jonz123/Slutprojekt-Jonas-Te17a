@@ -9,7 +9,7 @@ public class RainyDeath : Skill
     {
         skillName = "Rainy Death";
         description = "Deals heavy Physical damage to 1 foe.";
-        element[1] = 1;
+        element[1] = true;
         power = 350;
         target = 1;
         spCost = 0;

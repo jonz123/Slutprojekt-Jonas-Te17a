@@ -9,7 +9,7 @@ public class Mudoon : Skill
     {
         skillName = "Mudoon";
         description = "Darkness: high chance of instant kill, 1 foe.";
-        element[7] = 1;
+        element[7] = true;
         power = 60; //60% chance of insta-kill without weakness/resist (weakness makes it 80%, resist makes it 40%)
         target = 1;
         spCost = 15;

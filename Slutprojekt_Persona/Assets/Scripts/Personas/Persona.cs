@@ -25,7 +25,7 @@ public class Persona : MonoBehaviour
         public List<string> arcanaList = new List<string>() { "Fool", "Magician", "Priestess", "Empress", "Emperor", "Hierophant", "Lovers", "Chariot",
             "Justice", "Hermit", "Fortune", "Strength", "Hanged Man", "Death", "Temperance", "Devil", "Tower", "Star", "Moon", "Sun", "Judgement", "World" };
 
-        public int DealDamage(int eDef, int Hits, int ATK) //eDef hämtar fiendens defense som är baserad på dess END. Hits hämtar antalet hits som en attack utgör. ATK är vapen.
+        public int DealDamage(int eDef, int Hits, int ATK, int element) //eDef hämtar fiendens defense som är baserad på dess END. Hits hämtar antalet hits som en attack utgör. ATK är vapen.
         {
             float enemyDefense = eDef; //Konverterar integers till floats för att matten ska fungera
             float attackerStr = str;

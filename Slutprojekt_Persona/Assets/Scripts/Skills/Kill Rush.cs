@@ -9,13 +9,13 @@ public class KillRush : Skill
     {
         skillName = "Kill Rush";
         description = "Deals 1x to 3x light Physical damage to 1 foe.";
-        element[1] = 1;
+        element[1] = true;
         power = 100;
         target = 1;
         spCost = 0;
         hpCost = 10;
         baseCrit = 10;
-        maxRepeats = 3; //skill has a chance to repeat two or three times in a single use
+        hits = 3; //skill has a chance to repeat two or three times in a single use
     }
 
     // Update is called once per frame

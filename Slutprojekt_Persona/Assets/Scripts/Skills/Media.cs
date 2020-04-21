@@ -9,7 +9,7 @@ public class Media : Skill
     {
         skillName = "Media";
         description = "Slightly restores party's HP.";
-        element[0] = 1;
+        element[0] = true;
         power = 3; //user's MAG * power = HP restored (MAG 22 * 3 = 66HP)
         target = 5;
         spCost = 7;

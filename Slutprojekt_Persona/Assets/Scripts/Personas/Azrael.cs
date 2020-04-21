@@ -21,9 +21,9 @@ class Azrael : Persona
         resists[1] = true;
         nulls[6] = true;
 
-        Skill mudoon = new Mudoon();
-        Skill rainydeath = new RainyDeath();
-        Skill eiga = new Eiga();
+        Skill mudoon = gameObject.AddComponent<Mudoon>();
+        Skill rainydeath = gameObject.AddComponent<RainyDeath>();
+        Skill eiga = gameObject.AddComponent<Eiga>();
 
         skillList.Add(mudoon);
         skillList.Add(rainydeath);
