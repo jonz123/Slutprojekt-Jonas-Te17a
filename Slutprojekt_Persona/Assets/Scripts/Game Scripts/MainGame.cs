@@ -194,6 +194,7 @@ public class MainGame : MonoBehaviour
         //Det ultimata skulle såklart vara att ändra description baserat på vilken skill som musen hänger över
 
         //Nedan råder samma skript som Attack, men med inflytande av skills. Jag hade kunnat använda Attacks kod, men det gick inte att kalla fram variabler när man trycker på knappen Attack.
+        /*
         quickEnable(2);
         if (EnemyList[0].Miss(EnemyList[0].agi) == false)
         {
@@ -205,8 +206,9 @@ public class MainGame : MonoBehaviour
         {
             turnText.text = string.Format(">" + CharacterList[ActionTurn].charName + " attacks!\n>Attack missed!");
         }
+        
         //Koden över kallar metoden som skadar fienden med hjälp av DealDamage-valuen som finns i karaktärerna.
-        StartCoroutine(waitTwo());
+        StartCoroutine(waitTwo());*/
 
     }
 
